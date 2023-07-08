@@ -37,6 +37,12 @@ room_list_docs = extend_schema(
             location=OpenApiParameter.QUERY,
             description='Includes the number of members in each room.',
         ),
+        OpenApiParameter(
+            name='by_roomId',
+            type=OpenApiTypes.INT,
+            location=OpenApiParameter.QUERY,
+            description='Includes room by id',
+        ),
         
     ],
 

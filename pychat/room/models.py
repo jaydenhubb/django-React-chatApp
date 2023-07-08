@@ -88,7 +88,7 @@ class Channel(models.Model):
     # This code ensures that when a Category object is deleted, 
     # any associated file (in the "icon" field) is also removed.
     @receiver(models.signals.pre_delete, sender="room.Channel")
-    def category_delete_files(sender, instance, **kwargs):
+    def channel_delete_files(sender, instance, **kwargs):
         for field in instance._meta.fields:
             if field.name == "icon" or field.name == "banner":
                 file = getattr(instance, field.name)
